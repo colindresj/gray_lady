@@ -20,8 +20,8 @@ function addEventList() {
     getPictures()
     .done(function(response) {
       $.each(response, function(index, picture){
-        li = '<li><img src="' + picture + '"></li>';
-        $('#links').append(li);
+        img = '<li><img src="' + picture + '"></li>';
+        $('#links').append(imgr);
       });
     })
     .fail(function() {
