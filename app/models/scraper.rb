@@ -8,15 +8,13 @@ class Scraper
   def get_hrefs
     html = HTTParty.get @url
     doc = Nokogiri::HTML(html)
-    links = doc.css('a').map { |link| link['href'] }
-    links.flatten
+    doc.css('a').map { |link| link['href'] }
   end
 
   def get_images
     html = HTTParty.get @url
     doc = Nokogiri::HTML(html)
-    images = doc.css('img').map { |img| img['src'] }
-    images.flatten
+    doc.css('img').map { |img| img['src'] }
   end
 
 end
